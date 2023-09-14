@@ -1,0 +1,35 @@
+.particle-button-container {
+    position: absolute;
+    display: flex;
+    /* display: inline-block; */
+
+  }
+  
+  .particle-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    background-color: #32c75f;
+    color: #ffffff;
+    cursor: pointer;
+  }
+  
+  .particle {
+    position: relative;
+    width: 10px;
+    height: 10px;
+    border-radius: 0;
+    animation: particleAnimation 2s linear;
+    z-index: 100;
+  }
+  
+  @keyframes particleAnimation {
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-100px);
+      opacity: 0;
+    }
+  }

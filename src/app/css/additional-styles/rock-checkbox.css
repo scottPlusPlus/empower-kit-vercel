@@ -1,0 +1,52 @@
+.rock-checkbox {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  .checkmark {
+    position: relative;
+    padding-left: 2.5rem;
+    cursor: pointer;
+  }
+  
+  .checkmark:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 3px;
+    border: 2px solid #CBD5E0;
+  }
+  
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid #CBD5E0;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+  
+  .rock-checkbox:checked + .checkmark:before {
+    border-color: orange;
+  }
+  
+  .rock-checkbox:checked + .checkmark:after {
+    display: block;
+    border-color: orange;
+  }
+  
+  .checkmark:hover:before {
+    border-color: darkorange;
+  }
+  
+  .checkmark:hover:after {
+    border-color: darkorange;
+  }
