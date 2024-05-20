@@ -10,10 +10,10 @@ import { deepCopyArray } from "@/src/agnostic/utils/arrayUtils";
 import { ScoutCss } from "./ScoutCss";
 import SearchInputField from "./SearchInputField";
 import { BaseWidth } from "../BaseWidth";
-import { ScoutInfo, ScoutItem } from "@/src/shared/scoutTypes";
+import { ScoutInfo, ItemLabel } from "@/src/shared/scoutTypes";
 
 type Props = {
-    loadedItems: ScoutItem[],
+    loadedItems: ItemLabel[],
     initialTerms: SearchTermT[],
     infoMap: Map<string, ScoutInfo>,
     searchTermsUpdatedHandler?: (newTerms: SearchTermT[], oldTerms?: SearchTermT[]) => void,
@@ -25,7 +25,7 @@ type Props = {
 export default function SearchableItemDisplay(props: Props) {
 
     const [searchTerms, setSearchTerms] = useState<SearchTermT[]>(props.initialTerms);
-    const [sortedItems, setSortedItems] = useState<ScoutItem[]>(props.loadedItems);
+    const [sortedItems, setSortedItems] = useState<ItemLabel[]>(props.loadedItems);
 
     useEffect(() => {
         // console.log("SearchableItemDisplay useEffect");
@@ -50,10 +50,10 @@ export default function SearchableItemDisplay(props: Props) {
         });
         const prioritizedItems = remapItemPriorities(props.loadedItems, props.infoMap, validTerms)
         var sorted = prioritizedItems.sort((a, b) => {
-            return b.priority - a.priority;
+            return b.priority! - a.priority!;
         });
         if (sorted.length > 0 && validTerms.length > 0) {
-            sorted = sorted.filter(i => i.priority > 50);
+            sorted = sorted.filter(i => i.priority! > 50);
         }
 
         const newTermsStr = JSON.stringify(newTerms);

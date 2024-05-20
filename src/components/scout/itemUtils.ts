@@ -1,12 +1,13 @@
-import { ScoutInfo, ScoutItem } from "@/src/sharedCode/scoutTypes";
+
+import { ScoutInfo, ItemLabel } from "@/src/shared/scoutTypes";
 import { SearchTermT } from "./SearchTermT";
 
 export function remapItemPriorities(
-  items: ScoutItem[],
+  items: ItemLabel[],
   infoMap: Map<string, ScoutInfo>,
   searchParams: SearchTermT[],
   caseSensitive: Boolean = false
-): ScoutItem[] {
+): ItemLabel[] {
   const includes = (strA: string, strB: string) => {
     return strA.toLowerCase().includes(strB.toLowerCase());
   };
@@ -20,23 +21,23 @@ export function remapItemPriorities(
 
       item.tags.forEach((tag) => {
         if (includes(tag, search.term)) {
-          item.priority += search.priority * 5;
+          item.priority! += search.priority * 5;
         }
       });
 
       if (includes(item.comment, search.term)) {
-        item.priority += search.priority;
+        item.priority! += search.priority;
       }
       if (includes(item.url, search.term)) {
-        item.priority += search.priority;
+        item.priority! += search.priority;
       }
 
       const info = infoMap.get(item.url)!;
       if (includes(info.title, search.term)) {
-        item.priority += search.priority;
+        item.priority! += search.priority;
       }
       if (includes(info.summary, search.term)) {
-        item.priority += search.priority;
+        item.priority! += search.priority;
       }
     });
     //console.log(`${item.url} priority now ${item.priority}`);

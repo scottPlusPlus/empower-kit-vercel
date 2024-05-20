@@ -1,9 +1,9 @@
 import Image3x2 from "@/src/agnostic/components/Image3x2";
 import { ScoutCss } from "./ScoutCss";
-import { ScoutInfo, ScoutItem } from "@/src/shared/scoutTypes";
+import { ScoutInfo, ItemLabel } from "@/src/shared/scoutTypes";
 
 type ItemProps = {
-    item: ScoutItem,
+    item: ItemLabel,
     info: ScoutInfo,
     onTagClick: (arg0: string) => void,
     onLinkClick?: (url: string) => void,

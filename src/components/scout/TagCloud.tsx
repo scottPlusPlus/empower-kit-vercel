@@ -1,6 +1,5 @@
-import { ScoutItem } from '@/src/sharedCode/scoutTypes';
+import { ItemLabel } from '@/src/shared/scoutTypes';
 import { ScoutCss } from './ScoutCss';
-
 
 type TagObj = {
     name: string,
@@ -8,7 +7,7 @@ type TagObj = {
 }
 
 type TagCloudProps = {
-    items: ScoutItem[],
+    items: ItemLabel[],
     onTagClick: (arg0: string) => void,
     scoutCss: ScoutCss,
 }

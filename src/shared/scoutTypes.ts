@@ -1,16 +1,15 @@
 import { ScoutInfo } from "../serverCode/scoutApi";
 
-export type ScoutResponse = {
-    collection: ScoutCollection;
-    items: Array<ScoutItem>;
-    infos: Array<ScoutInfo>;
-};
+// export type ScoutResponse = {
+//     collection: ScoutCollection;
+//     items: Array<ItemLabel>;
+//     infos: Array<ScoutInfo>;
+// };
 
 export type ItemInfos = {
-    items: Array<ScoutItem>;
+    items: Array<ItemLabel>;
     infos: Array<ScoutInfo>;
 };
-
 
 
 export type ScoutCollection = {
@@ -22,10 +21,11 @@ export type ScoutCollection = {
     updated: Date;
 };
 
-export type ScoutItem = {
+export type ItemLabel = {
     url: string;
     comment: string;
     tags: string[];
+    priority?: number;
 };
 
 export type { ScoutInfo };

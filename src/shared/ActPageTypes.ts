@@ -1,10 +1,10 @@
-import { ScoutItem } from "@/src/shared/scoutTypes";
+import { ItemLabel } from "@/src/shared/scoutTypes";
 
 export type PageSectionT  = {
     title: string;
     size?: number;
     body: string;
-    links: Array<ScoutItem>
+    links: Array<ItemLabel>
     addSeparator?:boolean;
 }
 

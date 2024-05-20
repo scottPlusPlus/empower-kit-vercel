@@ -1,9 +1,9 @@
-import { ScoutItem } from "./scoutTypes";
+import { ItemLabel } from "./scoutTypes";
 
 export type PageSectionT  = {
     title: string;
     size?: number;
     body: string;
-    links: Array<ScoutItem>
+    links: Array<ItemLabel>
     addSeparator?:boolean;
 }
