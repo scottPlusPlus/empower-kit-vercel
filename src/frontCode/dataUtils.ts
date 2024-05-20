@@ -41,7 +41,7 @@ export async function submitAnalytics(
 }
 
 async function sendJson(endpoint: string, jsonString: string): Promise<void> {
-    console.log("send: " + endpoint);
+    // console.log("send: " + endpoint);
     const options = {
         method: "POST",
         headers: {

@@ -62,14 +62,14 @@ export default function SearchableItemDisplay(props: Props) {
                 props.searchTermsUpdatedHandler(validTerms, oldTerms);
             }
         } else {
-            console.log(`old terms ${oldTermsStr} == new terms ${newTermsStr}`);
+            // console.log(`old terms ${oldTermsStr} == new terms ${newTermsStr}`);
         }
         setSortedItems(sorted);
         setSearchTerms(newTerms);
     }
 
     const handleTagClick = (tag: string) => {
-        console.log("tag clicked " + tag);
+        // console.log("tag clicked " + tag);
         const newTerms = [...searchTerms];
         const newTerm = { term: tag, priority: 100 };
         newTerms.push(newTerm);
