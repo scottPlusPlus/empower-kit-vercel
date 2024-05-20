@@ -16,5 +16,33 @@
     .rtl {
         direction: rtl;
     }
+    .bg-mainG {
+        --tw-bg-opacity: 1;
+        background-color: rgb(20 184 143 / var(--tw-bg-opacity));
+      }
+      
+    .bg-mainP {
+      --tw-bg-opacity: 1;
+      background-color: rgb(108 54 125 / var(--tw-bg-opacity));
+    }
+    
+    .bg-navG {
+      --tw-bg-opacity: 1;
+      background-color: rgb(15 138 107 / var(--tw-bg-opacity));
+    }
+    
+    .bg-navP {
+      --tw-bg-opacity: 1;
+      background-color: rgb(77 38 89 / var(--tw-bg-opacity));
+    }
+
+    .to-mainG {
+      --tw-gradient-to: #14b88f;
+    }
+    
+    .to-mainP {
+      --tw-gradient-to: #6c367d;
+    }
+
 }
 

@@ -1,3 +1,5 @@
+import { asInt } from "./baseUtils";
+
 export function getIpAddress(request: Request): string {
     const ipAddress =
         request.headers.get("x-forwarded-for") ||
@@ -18,3 +20,9 @@ export function getIpAddressFromHeadersDict(headeres:NodeJS.Dict<string|string[]
     }
     return ipAddress;
 }
+
+export function ipAsNumber(ip:string):number {
+    const str = ip.replace(".","");
+    return asInt(str, 0);
+  }
+  

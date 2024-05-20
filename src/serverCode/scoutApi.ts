@@ -1,46 +1,83 @@
-import { nowHHMMSS } from "../agnostic/utils/timeUtils";
-import { ScoutCollection, ScoutInfo, ScoutItem } from "../shared/scoutTypes";
+import { wait } from "@/agnostic/utils/asyncUtils";
 
-type ScoutResponse = {
-    collection: ScoutCollection;
-    items: Array<ScoutItem>;
-    infos: Array<ScoutInfo>;
+const SERVER_ADDR = "http://165.227.250.231";
+
+export type ScoutInfo = {
+    url: string;
+    fullUrl: string;
+    hash: string;
+    title: string;
+    summary: string;
+    image: string;
+    contentType: string | null;
+    duration: number | null;
+    likes: number | null;
+    authorName: string | null;
+    authorLink: string | null;
+    created: Date;
+    updated: Date;
+    checked: Date;
+    twitterHandle?: string;
+    fullHtml?: string;
+    bodyMarkdown?: string;
 };
 
-export async function fetchFromScoutRemix(): Promise<ScoutResponse> {
-    console.log(`${nowHHMMSS()} sending request to scout.`);
-    // Send the data to the server in JSON format.
-    // API endpoint where we send form data.
-    var endpoint = "https://empower-kit.com/api/collection";
-    const bodyObj = { cid: "activists", key: "vercel5971795060311" };
-    // Form the request for sending data to the server.
-    const options = {
-        // The method is POST because we are sending data.
-        method: "POST",
-        // Tell the server we're sending JSON.
-        headers: {
-            "Content-Type": "application/json",
-        },
-        // Body of the request is the JSON data we created above.
-        body: JSON.stringify(bodyObj),
-    };
-    const response = await fetch(endpoint, options);
-    if (response.status == 200) {
-        const rj: ScoutResponse = await response.json();
-
-
-        if (!rj.collection || !rj.items || !rj.infos) {
-            console.log("invalid repsonse from remix");
-            console.log(JSON.stringify(rj));
-            return rj;
-            // throw new Error("invalid repsonse from remix");
+export async function fetchSiteFromScout(
+    url: string,
+    fullHtml: boolean
+): Promise<ScoutInfo> {
+    try {
+        const res = await fetchSitesFromScout([url], fullHtml);
+        if (res.length == 0 || !res[0].bodyMarkdown) {
+            throw new Error("invalid from scout");
         }
+        return res[0];
+    } catch (err) {
+        //first failure we'll retry
+    }
+    await wait(30 * 1000);
+    try {
+        const res = await fetchSitesFromScout([url], fullHtml);
+        return res[0];
+    } catch (err: any) {
+        console.log("error from Scout. failed twice: " + err.message);
+        throw err;
+    }
+}
 
-        return rj;
-    } else {
-        const txt = await response.text();
-        console.log("repsonse from remix: " + response.status);
-        console.log("Jarvis server err: " + txt);
-        throw new Error("invalid repsonse from remix");
+export async function fetchSitesFromScout(
+    urls: Array<string>,
+    fullHtml: boolean
+): Promise<Array<ScoutInfo>> {
+    console.log(`requesting urls from scout: ${urls.join(" - ")}`);
+    try {
+        const endpoint = new URL("/api/scout", SERVER_ADDR);
+        const bodyData = {
+            urls: urls,
+            fullHtml: fullHtml,
+            bodyMarkdown: true,
+            apiKey: process.env.NEXT_PUBLIC_EMPOWERKIT_API_KEY,
+        };
+        const options = {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(bodyData),
+        };
+        const response = await fetch(endpoint, options);
+        if (response.status == 200) {
+            const responseData = await response.json();
+            // console.log("Empower response data:");
+            // console.log(JSON.stringify(responseData));
+            return responseData;
+        } else {
+            const rt = await response.text();
+            console.log(`Scout err with status ${response.status}: ${rt}`);
+            throw new Error(rt);
+        }
+    } catch (err: any) {
+        console.log("err from Scout: " + err.message);
+        return [];
     }
 }

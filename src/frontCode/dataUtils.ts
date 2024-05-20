@@ -34,6 +34,7 @@ export async function submitAnalytics(
     const bodyData = {
         event: event,
         data: data,
+        domain: "activist-vercel"
     };
     const endpoint = "/api/submitAnalytics";
     await sendJson(endpoint, JSON.stringify(bodyData));

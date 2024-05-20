@@ -4,6 +4,7 @@ module.exports = {
     './src/app/**/*.{js,ts,jsx,tsx}',
     './src/pages/**/*.{js,ts,jsx,tsx}',
     './src/components/**/*.{js,ts,jsx,tsx}',
+    './src/shared/**/*.{js,ts,jsx,tsx}',
     './src/agnostic/components/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {

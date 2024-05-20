@@ -1,0 +1,417 @@
+[
+    {
+        "url": "meaningfulcode.org",
+        "comment": "",
+        "tags": [
+            "tech",
+            "volunteer"
+        ]
+    },
+    {
+        "url": "goodhere.org",
+        "comment": "",
+        "tags": [
+            "climate"
+        ]
+    },
+    {
+        "url": "volunteerworld.com",
+        "comment": "",
+        "tags": []
+    },
+    {
+        "url": "nationbuilder.com",
+        "comment": "",
+        "tags": [
+            "software"
+        ]
+    },
+    {
+        "url": "www.humanetech.com/course",
+        "comment": "",
+        "tags": []
+    },
+    {
+        "url": "www.allwecansave.earth",
+        "comment": "",
+        "tags": [
+            "climate"
+        ]
+    },
+    {
+        "url": "docs.google.com/document/d/e/2PACX-1vS30vR8zChP03PfKowbeIKgikTtrNn0Wefs7sIjy-sVUAroXizvZ4nFdPS27FvNqGpr396YcYRrdr3J/pub",
+        "comment": "",
+        "tags": [
+            "climate"
+        ]
+    },
+    {
+        "url": "volunteermatch.org",
+        "comment": "Find local volunteer listings",
+        "tags": [
+            "volunteer"
+        ]
+    },
+    {
+        "url": "www.dosomething.org/us",
+        "comment": "Geared towards young people and provides resources for taking action on various social issues.",
+        "tags": [
+            "volunteer"
+        ]
+    },
+    {
+        "url": "www.idealist.org",
+        "comment": "Find career opportunities with nonprofit organizations.",
+        "tags": [
+            "volunteer"
+        ]
+    },
+    {
+        "url": "indivisible.org",
+        "comment": "Find local or virtual groups to participate in contacting your representatives and general activism.",
+        "tags": [
+            "community"
+        ]
+    },
+    {
+        "url": "medium.com/swlh/this-is-how-you-find-protests-in-your-city-cfcbf9d48c8f",
+        "comment": "An article describing how to find local protests through social media.",
+        "tags": [
+            "article"
+        ]
+    },
+    {
+        "url": "www.house.gov/representatives/find-your-representative",
+        "comment": "Information on where to contact your representatives",
+        "tags": [
+            "politics"
+        ]
+    },
+    {
+        "url": "www.aclu.org/writing-your-elected-representatives",
+        "comment": "An article describes how to format your letters or calls to your representatives.",
+        "tags": [
+            "article",
+            "politics"
+        ]
+    },
+    {
+        "url": "starvoting.org",
+        "comment": "Organization working to give voters more power by updating our voting system beyond 'choose-one' voting.",
+        "tags": [
+            "voting"
+        ]
+    },
+    {
+        "url": "givewell.org",
+        "comment": "The top rated charities that yield the most impact per dollar to save or improve lives.",
+        "tags": [
+            "donate"
+        ]
+    },
+    {
+        "url": "charitynavigator.org",
+        "comment": "A website that ranks charities based on their transparency and tax documents.",
+        "tags": [
+            "donate"
+        ]
+    },
+    {
+        "url": "youtube.com/@ClimateTown",
+        "comment": "Climate scientist and comedian Rollie Williams teaches you about climate change in a comedic fashion",
+        "tags": [
+            "climate",
+            "learn",
+            "video"
+        ]
+    },
+    {
+        "url": "gapminder.org/dollar-street",
+        "comment": "",
+        "tags": [
+            "interactive",
+            "learn",
+            "poverty",
+            "tech"
+        ]
+    },
+    {
+        "url": "ncase.me/polygons",
+        "comment": "",
+        "tags": [
+            "interactive",
+            "learn",
+            "tech"
+        ]
+    },
+    {
+        "url": "ncase.me/ballot",
+        "comment": "An extensive look into issues with our current voting system and all the alternatives to it. ",
+        "tags": [
+            "interactive",
+            "learn",
+            "tech",
+            "voting"
+        ]
+    },
+    {
+        "url": "www.youtube.com/watch?v=DOWDNBu9DkU",
+        "comment": "",
+        "tags": [
+            "tech",
+            "video"
+        ]
+    },
+    {
+        "url": "unitedbyzero.com",
+        "comment": "A browser extension that helps you shop sustainably",
+        "tags": [
+            "climate"
+        ]
+    },
+    {
+        "url": "climaterealityproject.org",
+        "comment": "",
+        "tags": [
+            "climate"
+        ]
+    },
+    {
+        "url": "climatevisuals.org",
+        "comment": "",
+        "tags": [
+            "climate"
+        ]
+    },
+    {
+        "url": "thecarbonalmanac.org",
+        "comment": "",
+        "tags": [
+            "climate"
+        ]
+    },
+    {
+        "url": "thesolutionsproject.org/what-we-do",
+        "comment": "",
+        "tags": [
+            "climate"
+        ]
+    },
+    {
+        "url": "ourworldindata.org",
+        "comment": "",
+        "tags": [
+            "data"
+        ]
+    },
+    {
+        "url": "gapminder.org",
+        "comment": "",
+        "tags": [
+            "data",
+            "learn"
+        ]
+    },
+    {
+        "url": "data.gov",
+        "comment": "",
+        "tags": [
+            "data"
+        ]
+    },
+    {
+        "url": "hdr.undp.org",
+        "comment": "",
+        "tags": [
+            "data"
+        ]
+    },
+    {
+        "url": "healthdata.org/data-tools-practices",
+        "comment": "",
+        "tags": [
+            "data"
+        ]
+    },
+    {
+        "url": "ballotpedia.org",
+        "comment": "",
+        "tags": [
+            "data",
+            "politics"
+        ]
+    },
+    {
+        "url": "worldometers.info",
+        "comment": "",
+        "tags": [
+            "data"
+        ]
+    },
+    {
+        "url": "www.cmzoo.org/conservation/orangutans-palm-oil/palm-oil-scan-mobile-app",
+        "comment": "An app that provides information on which brands use (more) sustainable palm oil. ",
+        "tags": [
+            "climate"
+        ]
+    },
+    {
+        "url": "www.commoncause.org",
+        "comment": "",
+        "tags": [
+            "group",
+            "politics"
+        ]
+    },
+    {
+        "url": "taprootfoundation.org",
+        "comment": "",
+        "tags": [
+            "volunteer"
+        ]
+    },
+    {
+        "url": "www.catchafire.org",
+        "comment": "",
+        "tags": [
+            "volunteer"
+        ]
+    },
+    {
+        "url": "movingworlds.org/transform/professionals",
+        "comment": "",
+        "tags": [
+            "volunteer"
+        ]
+    },
+    {
+        "url": "www.centreforeffectivealtruism.org",
+        "comment": "",
+        "tags": []
+    },
+    {
+        "url": "www.change.org",
+        "comment": "",
+        "tags": []
+    },
+    {
+        "url": "represent.us",
+        "comment": "",
+        "tags": [
+            "politics"
+        ]
+    },
+    {
+        "url": "mkorostoff.github.io/1-pixel-wealth/?v=3",
+        "comment": "",
+        "tags": [
+            "infographic",
+            "learn"
+        ]
+    },
+    {
+        "url": "support-ukrainian-business.super.site",
+        "comment": "",
+        "tags": [
+            "Ukraine"
+        ]
+    },
+    {
+        "url": "www.volunteeringukraine.com",
+        "comment": "",
+        "tags": [
+            "Ukraine",
+            "volunteer"
+        ]
+    },
+    {
+        "url": "www.allianceforukraine.org/cpages/uniting-for-ukraine-sponsorship",
+        "comment": "Sponsor Ukrainians seeking refuge in the US",
+        "tags": [
+            "Ukraine"
+        ]
+    },
+    {
+        "url": "boycottrussia.info",
+        "comment": "",
+        "tags": [
+            "Ukraine"
+        ]
+    },
+    {
+        "url": "www.avatarsforukraine.com",
+        "comment": "",
+        "tags": [
+            "Ukraine"
+        ]
+    },
+    {
+        "url": "novaukraine.org/get-involved",
+        "comment": "Vetted US-based charity run by native Ukranians.  Has ways to get involved in addition to taking donations.",
+        "tags": [
+            "Ukraine",
+            "donate",
+            "volunteer"
+        ]
+    },
+    {
+        "url": "www.youtube.com/watch?v=FdbJHeqQh00",
+        "comment": "",
+        "tags": [
+            "climate",
+            "video"
+        ]
+    },
+    {
+        "url": "www.ecotokcollective.com/resources",
+        "comment": "",
+        "tags": [
+            "climate",
+            "toolkit"
+        ]
+    },
+    {
+        "url": "www.nrdc.org/stories/how-argue-people-you-know-and-love-irl",
+        "comment": "",
+        "tags": [
+            "article",
+            "influence"
+        ]
+    },
+    {
+        "url": "www.nrdc.org/take-action/toolkits",
+        "comment": "",
+        "tags": [
+            "toolkit"
+        ]
+    },
+    {
+        "url": "www.nrdc.org/stories/how-where-speak-out-climate-action",
+        "comment": "",
+        "tags": [
+            "article",
+            "climate"
+        ]
+    },
+    {
+        "url": "www.opensecrets.org",
+        "comment": "",
+        "tags": [
+            "data"
+        ]
+    },
+    {
+        "url": "www.youtube.com/@SecondThought",
+        "comment": "",
+        "tags": [
+            "video"
+        ]
+    },
+    {
+        "url": "www.ecosia.org",
+        "comment": "",
+        "tags": [
+            "climate"
+        ]
+    }
+]
