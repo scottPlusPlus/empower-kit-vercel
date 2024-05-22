@@ -13,7 +13,7 @@ export default async function handler(
                 ip: hopefullyIp,
                 event: req.body.event,
                 data: req.body.data,
-                domain: "atlas",
+                domain: "empower-vercel",
             },
         ],
     };
