@@ -13,7 +13,7 @@ type ApProps = {
   searchParams: Record<string, unknown>
 }
 export default function ActivistsPage(props: ApProps) {
-
+  // console.log("render ActivistsPage");
   const ipab = getAbParam(props.searchParams);
   return (
     <ActivistsPageWithAb

@@ -13,10 +13,10 @@ import { wait } from '../agnostic/utils/asyncUtils';
 export const metadata = mainMetadata;
 
 // export const dynamic = 'force-dynamic';
-export const revalidate = 25200;
+export const revalidate = 25200; //7 hours
 
 async function getServerData() {
-    const now = nowHHMMSS();
+    let now = nowHHMMSS();
     console.log(`${now} Empower-Kit: getServerData`);
 
     const pageDataObj = pageData;
@@ -27,14 +27,15 @@ async function getServerData() {
         items: items,
         infos: scoutData
     };
-
-
+    now = nowHHMMSS();
+    console.log(`${now} Empower-Kit: returning server data`);
     return { pageData: pageDataObj, itemInfos, time: now };
 }
 
 async function graduallyLoadScoutItems(itemUrls: Array<string>): Promise<Array<ScoutInfo>> {
     const itemChunks = _.chunk(itemUrls, 32);
     let res: Array<ScoutInfo> = [];
+    const totalStartTime = nowUnixTimestamp();
     for (const chunk of itemChunks) {
         const startTime = nowUnixTimestamp();
         const scoutData = await fetchSitesFromScout(chunk, false);
@@ -43,18 +44,22 @@ async function graduallyLoadScoutItems(itemUrls: Array<string>): Promise<Array<S
         res = _.concat(res, scoutData);
         await wait(3 * 1000);
     }
+    const totalDuration = nowUnixTimestamp() - totalStartTime;
+    console.log(`graduallyLoadScoutItems took ${totalDuration} seconds`);
     return res;
 }
 
 export default async function Home({ searchParams }: {
     searchParams: Record<string, unknown> | null;
 }) {
+    console.log("Empower Home");
     var serverData = await getServerData();
 
     if (!serverData.pageData) {
         return null;
     }
 
+    console.log("Empower Home about to render");
     return (
         <ActivistPageClient
             pageData={serverData.pageData}

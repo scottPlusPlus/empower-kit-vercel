@@ -30,7 +30,7 @@ type ApProps = {
   ab:number,
 }
 export default function ActivistsPageWithAb(props: ApProps) {
-
+  // console.log("ActivistsPageWithAb");
   const ipab = props.ab;
   const sections: Array<PageSectionT> = props.pageData.sections;
   const uInfos: Array<ScoutInfo> = props.itemInfos.infos;

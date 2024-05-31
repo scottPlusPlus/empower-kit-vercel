@@ -38,6 +38,7 @@ export async function submitAnalytics(
     };
     const endpoint = "/api/submitAnalytics";
     await sendJson(endpoint, JSON.stringify(bodyData));
+    // console.log("sent analytics");
 }
 
 async function sendJson(endpoint: string, jsonString: string): Promise<void> {
