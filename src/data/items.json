@@ -159,7 +159,8 @@
         "url": "unitedbyzero.com",
         "comment": "A browser extension that helps you shop sustainably",
         "tags": [
-            "climate"
+            "climate",
+            "tech"
         ]
     },
     {
@@ -178,13 +179,6 @@
     },
     {
         "url": "thecarbonalmanac.org",
-        "comment": "",
-        "tags": [
-            "climate"
-        ]
-    },
-    {
-        "url": "thesolutionsproject.org/what-we-do",
         "comment": "",
         "tags": [
             "climate"
@@ -405,6 +399,76 @@
         "comment": "",
         "tags": [
             "climate"
+        ]
+    },
+    {
+        "url": "earthshotprize.org",
+        "comment": "",
+        "tags": [
+            "climate"
+        ]
+    },
+    {
+        "url": "350.org",
+        "comment": "",
+        "tags": [
+            "climate"
+        ]
+    },
+    {
+        "url": "greenpeace.org",
+        "comment": "",
+        "tags": [
+            "climate"
+        ]
+    },
+    {
+        "url": "rebellion.global",
+        "comment": "",
+        "tags": [
+            "climate"
+        ]
+    },
+    {
+        "url": "drawdown.org",
+        "comment": "",
+        "tags": [
+            "climate"
+        ]
+    },
+    {
+        "url": "www.ucsusa.org",
+        "comment": "",
+        "tags": [
+            "climate"
+        ]
+    },
+    {
+        "url": "thesolutionsproject.org",
+        "comment": "",
+        "tags": [
+            "climate"
+        ]
+    },
+    {
+        "url": "beautifultrouble.org",
+        "comment": "",
+        "tags": [
+            "creative"
+        ]
+    },
+    {
+        "url": "artivistnetwork.org",
+        "comment": "",
+        "tags": [
+            "creative"
+        ]
+    },
+    {
+        "url": "www.gosolve.org",
+        "comment": "",
+        "tags": [
+            "tech", "community"
         ]
     }
 ]

@@ -1,7 +1,7 @@
 import { nowHHMMSS, nowUnixTimestamp } from '../agnostic/utils/timeUtils';
 import { fetchBlob } from '../serverCode/jarvisApi';
 import { mainMetadata } from '../frontCode/metadata';
-import _ from "lodash-es";
+import _, { shuffle } from "lodash-es";
 import ActivistPageClient from './act/ActivistPageClient';
 
 import items from '@/data/items.json';
@@ -20,7 +20,8 @@ async function getServerData() {
     console.log(`${now} Empower-Kit: getServerData`);
 
     const pageDataObj = pageData;
-    const itemUrls = items.map(itm => itm.url);
+    let itemUrls = items.map(itm => itm.url);
+    itemUrls = shuffle(itemUrls);
     const scoutData = await graduallyLoadScoutItems(itemUrls);
 
     const itemInfos: ItemInfos = {
