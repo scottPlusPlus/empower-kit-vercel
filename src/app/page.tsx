@@ -43,7 +43,7 @@ async function graduallyLoadScoutItems(itemUrls: Array<string>): Promise<Array<S
         const duration = nowUnixTimestamp() - startTime;
         console.log(`scout took ${duration} seconds`);
         res = _.concat(res, scoutData);
-        await wait(3 * 1000);
+        await wait(1 * 1000);
     }
     const totalDuration = nowUnixTimestamp() - totalStartTime;
     console.log(`graduallyLoadScoutItems took ${totalDuration} seconds`);
