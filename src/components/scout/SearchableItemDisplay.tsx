@@ -27,6 +27,8 @@ export default function SearchableItemDisplay(props: Props) {
     const [searchTerms, setSearchTerms] = useState<SearchTermT[]>(props.initialTerms);
     const [sortedItems, setSortedItems] = useState<ItemLabel[]>(props.loadedItems);
 
+    // console.log(`SearchableItemDisplay with ${props.loadedItems.length} loaded items`);
+
     useEffect(() => {
         // console.log("SearchableItemDisplay useEffect");
         // console.log("current search terms: " + JSON.stringify(searchTerms));

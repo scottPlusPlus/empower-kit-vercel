@@ -37,7 +37,7 @@ export default function ActivistsPageWithAb(props: ApProps) {
 
   const infoMap = new Map<string, ScoutInfo>();
   uInfos.forEach(info => {
-    infoMap.set(info.url, info);
+    infoMap.set(info.fullUrl, info);
   });
 
   const [clickD, setClickD] = useState({ count: 0, data: "" });
@@ -51,6 +51,7 @@ export default function ActivistsPageWithAb(props: ApProps) {
   const addFooters = getAbFlag(ipab, AB_FLAGS.GRAD_OR_ALT);
   //console.log("image src = " + heroImage.src);
 
+  // console.log(`prep filter ${props.itemInfos.items.length} items by info map with ${infoMap.size}`);
   const loadedItems = props.itemInfos.items.filter(item => {
     return infoMap.has(item.url);
   });

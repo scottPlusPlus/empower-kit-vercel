@@ -1,5 +1,5 @@
 import { nowHHMMSS, nowUnixTimestamp } from '../agnostic/utils/timeUtils';
-import { fetchBlob } from '../serverCode/jarvisApi';
+import { fetchBlob, jarvisLinkCollection } from '../serverCode/jarvisApi';
 import { mainMetadata } from '../frontCode/metadata';
 import _, { shuffle } from "lodash-es";
 import ActivistPageClient from './act/ActivistPageClient';
@@ -16,39 +16,36 @@ export const metadata = mainMetadata;
 export const revalidate = 25200; //7 hours
 
 async function getServerData() {
-    let now = nowHHMMSS();
-    console.log(`${now} Empower-Kit: getServerData`);
+    const start = nowHHMMSS();
+    console.log(`${start} Empower-Kit: getServerData`);
 
     const pageDataObj = pageData;
-    let itemUrls = items.map(itm => itm.url);
-    itemUrls = shuffle(itemUrls);
-    const scoutData = await graduallyLoadScoutItems(itemUrls);
+    // let itemUrls = items.map(itm => itm.url);
+    // itemUrls = shuffle(itemUrls);
+    // const scoutData = await graduallyLoadScoutItems(itemUrls);
 
-    const itemInfos: ItemInfos = {
-        items: items,
-        infos: scoutData
-    };
-    now = nowHHMMSS();
-    console.log(`${now} Empower-Kit: returning server data`);
-    return { pageData: pageDataObj, itemInfos, time: now };
+    const itemInfos = await jarvisLinkCollection();
+    const end = nowHHMMSS();
+    console.log(`${end} Empower-Kit: returning server data`);
+    return { pageData: pageDataObj, itemInfos };
 }
 
-async function graduallyLoadScoutItems(itemUrls: Array<string>): Promise<Array<ScoutInfo>> {
-    const itemChunks = _.chunk(itemUrls, 32);
-    let res: Array<ScoutInfo> = [];
-    const totalStartTime = nowUnixTimestamp();
-    for (const chunk of itemChunks) {
-        const startTime = nowUnixTimestamp();
-        const scoutData = await fetchSitesFromScout(chunk, false);
-        const duration = nowUnixTimestamp() - startTime;
-        console.log(`scout took ${duration} seconds`);
-        res = _.concat(res, scoutData);
-        await wait(1 * 1000);
-    }
-    const totalDuration = nowUnixTimestamp() - totalStartTime;
-    console.log(`graduallyLoadScoutItems took ${totalDuration} seconds`);
-    return res;
-}
+// async function graduallyLoadScoutItems(itemUrls: Array<string>): Promise<Array<ScoutInfo>> {
+//     const itemChunks = _.chunk(itemUrls, 32);
+//     let res: Array<ScoutInfo> = [];
+//     const totalStartTime = nowUnixTimestamp();
+//     for (const chunk of itemChunks) {
+//         const startTime = nowUnixTimestamp();
+//         const scoutData = await fetchSitesFromScout(chunk, false);
+//         const duration = nowUnixTimestamp() - startTime;
+//         console.log(`scout took ${duration} seconds`);
+//         res = _.concat(res, scoutData);
+//         await wait(1 * 1000);
+//     }
+//     const totalDuration = nowUnixTimestamp() - totalStartTime;
+//     console.log(`graduallyLoadScoutItems took ${totalDuration} seconds`);
+//     return res;
+// }
 
 export default async function Home({ searchParams }: {
     searchParams: Record<string, unknown> | null;
@@ -60,7 +57,7 @@ export default async function Home({ searchParams }: {
         return null;
     }
 
-    console.log("Empower Home about to render");
+    // console.log("Empower Home about to render");
     return (
         <ActivistPageClient
             pageData={serverData.pageData}
