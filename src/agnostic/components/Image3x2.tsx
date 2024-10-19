@@ -23,7 +23,7 @@ const Image3x2: React.FC<ImageProps> = ({ src }) => {
 
   return (
     <div style={style}>
-      <img src={src} style={imgStyle} alt="" />
+      <img src={src} style={imgStyle} alt="" loading="lazy"/>
     </div>
   );
 };
