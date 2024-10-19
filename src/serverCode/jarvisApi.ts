@@ -11,7 +11,8 @@ export async function jarvisLinkCollection():Promise<ItemInfos> {
     console.log(`fetch jarvisLinkCollection`);
     const rawJarvisObj = await jarvisLinkCollectionFetch();
     const rawJarvisItems:Array<any> = rawJarvisObj.items!;
-    const itemLabels:Array<ItemLabel> = rawJarvisObj.items.map((ji:any) => {
+    console.log(`pulled ${rawJarvisItems.length} items from jarvis`);
+    const itemLabels:Array<ItemLabel> = rawJarvisItems.map((ji:any) => {
         return {
             url: ji.url,
             comment: ji.comment,
@@ -31,9 +32,7 @@ async function jarvisLinkCollectionFetch():Promise<any> {
 
     const endpoint = 'http://24.199.102.59/api/linkCollection/clxojq4370000o72ciqebycsu';
     const options = {
-        // The method is POST because we are sending data.
         method: 'GET',
-        // Tell the server we're sending JSON.
         headers: {
             'Content-Type': 'application/json',
         },

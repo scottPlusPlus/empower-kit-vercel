@@ -14,6 +14,7 @@ export default function ItemDisplay(props: ItemProps) {
 
     if (!props.info){
         console.log("Item Display err for " + props.item.url);
+        return null;
     }
 
     const handleLinkClick = (event: React.MouseEvent<HTMLAnchorElement>) => {

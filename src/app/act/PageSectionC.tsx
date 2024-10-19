@@ -1,4 +1,5 @@
 import Observer from "@/src/agnostic/components/Observer";
+import { stripProtocolAndWww } from "@/src/agnostic/utils/urlUtils";
 import { BaseWidth } from "@/src/components/BaseWidth";
 import ItemDisplay from "@/src/components/scout/ItemDisplay";
 import { PageSectionT } from "@/src/shared/pageTypes";
@@ -25,10 +26,14 @@ export default function PageSectionC(props: Props) {
 
     const myCss = props.css;
     const infoMap = props.infoMap;
-    const links = props.data.links.filter(link => {
-        const info = infoMap.get(link.url);
+    const linkItems = props.data.links.filter(link => {
+        const urlForKey = stripProtocolAndWww(link.url)!;
+        const info = infoMap.get(urlForKey);
         return info != null;
     });
+    for(const item of linkItems){
+        item.url = stripProtocolAndWww(item.url)!;
+    }
 
     const doNothing = (x: any) => {
     }
@@ -43,7 +48,7 @@ export default function PageSectionC(props: Props) {
             </BaseWidth>
             <div className="py-8">
                 <div className={myCss.ITEM_GRID_COLS}>
-                    {links.map(item => (
+                    {linkItems.map(item => (
                         <ItemDisplay
                             key={item.url}
                             item={item}

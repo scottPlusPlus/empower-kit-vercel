@@ -21,6 +21,7 @@ import PageSectionC from "./PageSectionC";
 import { ScoutInfo } from "@/src/serverCode/scoutApi";
 import { IntroQuote } from "./IntroQuote";
 import { TableOfContents } from "./TableOfContents";
+import { normalizeUrl, stripProtocolAndWww } from "@/src/agnostic/utils/urlUtils";
 
 
 type ApProps = {
@@ -37,7 +38,8 @@ export default function ActivistsPageWithAb(props: ApProps) {
 
   const infoMap = new Map<string, ScoutInfo>();
   uInfos.forEach(info => {
-    infoMap.set(info.fullUrl, info);
+    const urlForKey = stripProtocolAndWww(info.url)!;
+    infoMap.set(urlForKey, info);
   });
 
   const [clickD, setClickD] = useState({ count: 0, data: "" });
@@ -52,9 +54,14 @@ export default function ActivistsPageWithAb(props: ApProps) {
   //console.log("image src = " + heroImage.src);
 
   // console.log(`prep filter ${props.itemInfos.items.length} items by info map with ${infoMap.size}`);
-  const loadedItems = props.itemInfos.items.filter(item => {
+  let loadedItems = props.itemInfos.items;
+  for(const item of loadedItems){
+    item.url = stripProtocolAndWww(item.url);
+  }
+  loadedItems = props.itemInfos.items.filter(item => {
     return infoMap.has(item.url);
   });
+
 
   useEffect(() => {
     //on first load

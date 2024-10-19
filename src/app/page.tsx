@@ -1,7 +1,6 @@
 import { nowHHMMSS, nowUnixTimestamp } from '../agnostic/utils/timeUtils';
 import { fetchBlob, jarvisLinkCollection } from '../serverCode/jarvisApi';
 import { mainMetadata } from '../frontCode/metadata';
-import _, { shuffle } from "lodash-es";
 import ActivistPageClient from './act/ActivistPageClient';
 
 import items from '@/data/items.json';
