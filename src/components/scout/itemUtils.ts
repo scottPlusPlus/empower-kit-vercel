@@ -1,4 +1,4 @@
-import { ScoutInfo, ScoutItem } from "@/src/sharedCode/scoutTypes";
+import { ScoutInfo, ScoutItem } from "@/src/shared/scoutTypes";
 import { SearchTermT } from "./SearchTermT";
 
 export function remapItemPriorities(
@@ -8,6 +8,8 @@ export function remapItemPriorities(
   caseSensitive: Boolean = false
 ): ScoutItem[] {
   const includes = (strA: string, strB: string) => {
+    strA = strA ?? "";
+    strB = strB ?? "";
     return strA.toLowerCase().includes(strB.toLowerCase());
   };
 

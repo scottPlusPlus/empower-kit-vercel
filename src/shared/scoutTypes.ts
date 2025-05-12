@@ -26,6 +26,7 @@ export type ScoutItem = {
     url: string;
     comment: string;
     tags: string[];
+    priority: number;
 };
 
 export type { ScoutInfo };
