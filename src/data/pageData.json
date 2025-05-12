@@ -17,7 +17,7 @@
                "priority":0
             },
             {
-               "url":"www.dosomething.org/us",
+               "url":"www.dosomething.org",
                "comment":"Geared towards young people and provides resources for taking action on various social issues.",
                "tags":[
                   
@@ -26,7 +26,7 @@
                "priority":0
             },
             {
-               "url":"www.idealist.org/en",
+               "url":"www.idealist.org",
                "comment":"Find career opportunities with nonprofit organizations.",
                "tags":[
                   
@@ -195,7 +195,7 @@
                "priority":0
             },
             {
-               "url":"thesolutionsproject.org/what-we-do",
+               "url":"thesolutionsproject.org",
                "comment":"",
                "tags":[
                   

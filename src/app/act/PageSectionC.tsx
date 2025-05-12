@@ -1,4 +1,5 @@
 import Observer from "@/src/agnostic/components/Observer";
+import { removePreDomain } from "@/src/agnostic/utils/urlUtils";
 import { BaseWidth } from "@/src/components/BaseWidth";
 import ItemDisplay from "@/src/components/scout/ItemDisplay";
 import { PageSectionT } from "@/src/shared/pageTypes";
@@ -26,7 +27,10 @@ export default function PageSectionC(props: Props) {
     const myCss = props.css;
     const infoMap = props.infoMap;
     const links = props.data.links.filter(link => {
-        const info = infoMap.get(link.url);
+        const info = infoMap.get(removePreDomain(link.url));
+        if (!info){
+            console.log(`section ${props.data.title} missing info for ${link.url}`)
+        }
         return info != null;
     });
 
@@ -47,7 +51,7 @@ export default function PageSectionC(props: Props) {
                         <ItemDisplay
                             key={item.url}
                             item={item}
-                            info={infoMap.get(item.url)!}
+                            info={infoMap.get(removePreDomain(item.url))!}
                             onTagClick={doNothing}
                             onLinkClick={props.handleLinkClick}
                             scoutCss={myCss}

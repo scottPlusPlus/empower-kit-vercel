@@ -11,6 +11,7 @@ import { ScoutCss } from "./ScoutCss";
 import SearchInputField from "./SearchInputField";
 import { BaseWidth } from "../BaseWidth";
 import { ScoutInfo, ScoutItem } from "@/src/shared/scoutTypes";
+import { removePreDomain } from "@/src/agnostic/utils/urlUtils";
 
 type Props = {
     loadedItems: ScoutItem[],
@@ -109,7 +110,7 @@ export default function SearchableItemDisplay(props: Props) {
                         <ItemDisplay
                             key={item.url}
                             item={item}
-                            info={props.infoMap.get(item.url)!}
+                            info={props.infoMap.get(removePreDomain(item.url))!}
                             onTagClick={handleTagClick}
                             onLinkClick={handleLinkClick}
                             scoutCss={props.scoutCss}

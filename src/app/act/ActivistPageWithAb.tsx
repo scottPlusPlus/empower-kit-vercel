@@ -21,6 +21,8 @@ import PageSectionC from "./PageSectionC";
 import { ScoutInfo } from "@/src/serverCode/scoutApi";
 import { IntroQuote } from "./IntroQuote";
 import { TableOfContents } from "./TableOfContents";
+import { removePrefix } from "@/src/agnostic/utils/stringUtils";
+import { removePreDomain } from "@/src/agnostic/utils/urlUtils";
 
 
 type ApProps = {
@@ -37,7 +39,8 @@ export default function ActivistsPageWithAb(props: ApProps) {
 
   const infoMap = new Map<string, ScoutInfo>();
   uInfos.forEach(info => {
-    infoMap.set(info.url, info);
+    const infoKey = removePreDomain(info.url);
+    infoMap.set(infoKey, info);
   });
 
   const [clickD, setClickD] = useState({ count: 0, data: "" });
@@ -52,7 +55,7 @@ export default function ActivistsPageWithAb(props: ApProps) {
   //console.log("image src = " + heroImage.src);
 
   const loadedItems = props.itemInfos.items.filter(item => {
-    return infoMap.has(item.url);
+    return infoMap.has(removePreDomain(item.url));
   });
 
   useEffect(() => {
