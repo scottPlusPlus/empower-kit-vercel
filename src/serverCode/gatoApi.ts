@@ -10,6 +10,11 @@ export async function loadGatoSheet(): Promise<{ items: Record<string, any>[] }>
 
         const res = await fetch(gatoUrl, { next: { revalidate: 3600 }, headers: { authorization: `Bearer ${gatoAuth}` } });
         console.log("gato resp: " + res.status);
+        if (res.status != 200){
+            const txt = await res.text();
+            console.log(txt);
+            throw new Error("gato resp: " + res.status);
+        }
         const json = await res.json();
         return json;
     } catch (err) {
