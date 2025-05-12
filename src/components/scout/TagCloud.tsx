@@ -1,4 +1,4 @@
-import { ScoutItem } from '@/src/sharedCode/scoutTypes';
+import { ScoutItem } from '@/src/shared/scoutTypes';
 import { ScoutCss } from './ScoutCss';
 
 
