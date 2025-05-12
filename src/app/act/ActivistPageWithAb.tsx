@@ -32,8 +32,8 @@ type ApProps = {
 export default function ActivistsPageWithAb(props: ApProps) {
 
   const ipab = props.ab;
-  const sections: Array<PageSectionT> = props.pageData.sections;
-  const uInfos: Array<ScoutInfo> = props.itemInfos.infos;
+  const sections: Array<PageSectionT> = props.pageData.sections ?? [];
+  const uInfos: Array<ScoutInfo> = props.itemInfos.infos ?? [];
 
   const infoMap = new Map<string, ScoutInfo>();
   uInfos.forEach(info => {
